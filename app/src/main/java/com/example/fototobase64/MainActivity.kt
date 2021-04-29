@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         val outputFormat = SimpleDateFormat("dd_MM_yyyy_HH_mm_ss")
         val filename = outputFormat.format(Date())
-        val file = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+        val file = File(this.getExternalFilesDir(Environment.DIRECTORY_PICTURES),
                 "$filename.jpg")
         outputFileUri = FileProvider.getUriForFile(this, this.applicationContext.packageName + ".provider", file)
         intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri)
