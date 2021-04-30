@@ -44,6 +44,13 @@ class MainActivity : AppCompatActivity() {
             adapter = Adapter(list)
         }
 
+        val str = "{\"имя\":\"test name\", \"возраст\":25}"
+        val user = parceJson(str)
+        Log.d(TAG, user.toString())
+        val jsonString = toJsom(user)
+        Log.d(TAG, jsonString)
+
+
         button.setOnClickListener {
             saveFullImage()
         }
